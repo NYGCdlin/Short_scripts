@@ -109,13 +109,13 @@ with open(file_list, 'r') as wanted:
 					data = path2+file
 					cnv_list.append(data)
 					cnv_filter = []
-					to_open = path2+"%s_drugable.txt"%file
+					to_open = path2+"%s_druggable.txt"%file
 					print "Processing",to_open
 					file_count += 1
 					out_file2 = open(to_open, 'w')
-					#print out_file2
 					with open(data, 'r') as file_to_parse2:
-						head2 = "GeneID" + "\t" + "log2" + "\t" + "chr:position" + "\t" + "scale" + "\t" + "score" +"\t" +"drugs"
+						cancer_cnv = []
+						head2 = "GeneID" + "\t" + "log2" + "\t" + "chr:position" + "\t" + "scale" + "\t" + "region" +"\t" + "cancer_census" +"\t" + "drugs"
 						print>>out_file2, head2.strip()
 						for cnv in file_to_parse2.readlines():
 							cnv = cnv.strip()
@@ -123,9 +123,18 @@ with open(file_list, 'r') as wanted:
 							cnv_filter.append(cnv)
 					file_to_parse2.close()
 					for cnv in cnv_filter:
-						for item in drug_list:
-							if cnv[0] == item[0]:
-								print>>out_file2, '\t'.join(cnv) + "\t" + item[2]
+						if cnv[0] in cancer_list:
+							new_line = '\t'.join(cnv) + "\t" + "Yes"
+							cancer_cnv.append(new_line)
+						else:
+							new_line = '\t'.join(cnv) + "\t" + "No"
+							cancer_cnv.append(new_line)						
+					for item in cancer_cnv:
+						item = item.strip()
+						item = item.split()
+						for drug in drug_list:
+							if item[0] == drug[0]:
+								print>>out_file2, '\t'.join(item) + "\t" + drug[2]
 					out_file2.close()
 
 
