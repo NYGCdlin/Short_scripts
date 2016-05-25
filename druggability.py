@@ -16,7 +16,7 @@ import os
 def print_pipeline_message(message):
     print '\n======================================================================================================='
     print message
-    print '=========================================================================================================\n'
+    print '=======================================================================================================\n'
 
 print_pipeline_message("This tool will search the database for potential drugs. Please have your project file ready")
 
