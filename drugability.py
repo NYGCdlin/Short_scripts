@@ -12,13 +12,6 @@ import os
 #import panda
 
 
-# head1 = ["CHROM","POS","ID","REF","ALT","CALLED_BY","SNPEFF_GENE_NAME","COSMIC_GENE \
-# COSMIC_AA_CHANGE        COSMIC_CDS      COSMIC_CNT      1000G_AF        ExAC_AF SNPEFF_IMPACT \
-# SNPEFF_EFFECT   SNPEFF_FUNCTIONAL_CLASS SNPEFF_AA_CHANGE        SNPEFF_CDS_CHANGE \
-# SNPEFF_CODON_CHANGE     SNPEFF_EXON_ID  SNPEFF_GENE_BIOTYPE     SNPEFF_TRANSCRIPT_ID \
-# TARGET_SCAN_miR_TARGET  MutationAssessor_score  MutationAssessor_pred   FATHMM_SOMATIC_score \
-# FATHMM_SOMATIC_pred     CHASM_score     CHASM_pred      Actionable      t_alt_count \
-# t_ref_count     n_alt_count     n_ref_count	Drugs"]
 
 def print_pipeline_message(message):
     print '\n================================================================================'
@@ -104,5 +97,14 @@ with open(file_list, 'r') as wanted:
 							if cnv[0] == item[0]:
 								print>>out_file2, '\t'.join(cnv) + "\t" + item[2]
 					out_file2.close()
+
+
+# head1 = ["CHROM","POS","ID","REF","ALT","CALLED_BY","SNPEFF_GENE_NAME","COSMIC_GENE \
+# COSMIC_AA_CHANGE        COSMIC_CDS      COSMIC_CNT      1000G_AF        ExAC_AF SNPEFF_IMPACT \
+# SNPEFF_EFFECT   SNPEFF_FUNCTIONAL_CLASS SNPEFF_AA_CHANGE        SNPEFF_CDS_CHANGE \
+# SNPEFF_CODON_CHANGE     SNPEFF_EXON_ID  SNPEFF_GENE_BIOTYPE     SNPEFF_TRANSCRIPT_ID \
+# TARGET_SCAN_miR_TARGET  MutationAssessor_score  MutationAssessor_pred   FATHMM_SOMATIC_score \
+# FATHMM_SOMATIC_pred     CHASM_score     CHASM_pred      Actionable      t_alt_count \
+# t_ref_count     n_alt_count     n_ref_count   Drugs"]
 print
 print file_count, "files processed at", parent
