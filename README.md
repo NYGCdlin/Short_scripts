@@ -1,10 +1,7 @@
 # Short_scripts
-Small tools to facilitate data parsing
+ACDC 1.0
+Tool to annotate druggability and tiers
 
 Instruction:
 
-./drugability.py "project directory list file"
-
-or
-
-just ./drugability.py and it will ask for the project direcotry list file name
+Run ACDC with <Tumor Normal Pair list>
