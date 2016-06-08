@@ -4,4 +4,4 @@ Tool to annotate druggability and tiers
 
 Instruction:
 
-Run ACDC with <Tumor Normal Pair list>
+Run ACDC with "Tumor Normal Pair list"
